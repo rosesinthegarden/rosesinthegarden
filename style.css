@@ -19,6 +19,10 @@ html {
 
 /* Basis-Styles für die Seite */
 body {
+	
+	display: flex;
+	flex-direction: column;
+
 	font-family: 'Playfair Display', serif;
 	background-color: #fdfaf6;
 	color: #2f3e2f;
@@ -69,8 +73,4 @@ footer {
 	padding: 1rem;
 	background-color: #cfe5cf;
 
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0; 
 }
