@@ -1,0 +1,63 @@
+
+html {
+	height: 100%;
+	width: 100%;
+	/* overflow-x:hidden
+	 */
+	 
+	margin: 0;
+	padding: 0;
+}
+
+/* Basis-Styles für die Seite */
+body {
+	font-family: 'Playfair Display', serif;
+	background-color: #fdfaf6;
+	color: #2f3e2f;
+	margin: 0;
+	padding: 0;
+	width: 100% !important;
+	height: 100% !important;
+}
+
+/* Kopfbereich */
+header {
+	background-color: #d4e8d4;
+	padding: 1rem;
+	text-align: center;
+	font-family: "Cormorant Garamond";
+	width: 100%;
+}
+
+/* Navigation */
+nav ul {
+	list-style: none;
+	padding: 0;
+}
+
+nav li {
+	display: inline-block;
+	margin: 0 1rem;
+}
+
+nav a {
+	text-decoration: none;
+	color: #2f3e2f;
+	font-weight: bold;
+}
+
+/* Hauptbereich */
+section {
+	padding: 2rem;
+}
+
+/* Fußzeile */
+footer {
+	text-align: center;
+	padding: 1rem;
+	background-color: #cfe5cf;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: auto;
+}
