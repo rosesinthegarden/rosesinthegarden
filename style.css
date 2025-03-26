@@ -60,7 +60,7 @@ section {
 	padding: 2rem;
 }
 
-main {
+#content {
 	flex: 1
 }
 /* Fußzeile */
