@@ -4,6 +4,10 @@
 }
 
 html {
+	
+	display: flex;
+	flex-direction: column;
+
 	height: 100%;
 	width: 100%;
 	/* overflow-x:hidden
@@ -55,13 +59,17 @@ section {
 	padding: 2rem;
 }
 
+main {
+	flex: 1
+}
 /* Fußzeile */
 footer {
 	text-align: center;
 	padding: 1rem;
 	background-color: #cfe5cf;
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: auto;
+	
+	/* min-height: 50px; */
+	/* width: 100%; */
+	/* height: auto; */
+	/* margin-top: auto; */
 }
