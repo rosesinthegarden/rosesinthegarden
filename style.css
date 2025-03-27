@@ -22,8 +22,8 @@ html {
 }
 
 
-#content {
-	flex: 1
+main, #content {
+	flex: 1 0 auto;
 }
 
 
@@ -77,4 +77,5 @@ footer {
 	padding: 1rem;
 	background-color: #cfe5cf;
 	width: 100%;
+	flex-shrink: 0;
 }
