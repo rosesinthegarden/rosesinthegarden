@@ -4,10 +4,6 @@
 }
 
 html {
-	
-	display: flex;
-	flex-direction: column;
-
 	height: 100%;
 	width: 100%;
 	/* overflow-x:hidden
@@ -17,12 +13,22 @@ html {
 	padding: 0;
 }
 
-/* Basis-Styles für die Seite */
-body {
-	
+
+
+#wrapper {
 	display: flex;
 	flex-direction: column;
+	min-height: 100%;
+}
 
+
+#content {
+	flex: 1
+}
+
+
+/* Basis-Styles für die Seite */
+body {
 	font-family: 'Playfair Display', serif;
 	background-color: #fdfaf6;
 	color: #2f3e2f;
@@ -64,21 +70,11 @@ section {
 	padding: 2rem;
 }
 
-#content {
-	flex: 1
-}
-
-
-#wrapper {
-	min-height: 100%;
-	display: flex;
-	flex-direction: column;
-  }
 
 /* Fußzeile */
 footer {
 	text-align: center;
 	padding: 1rem;
 	background-color: #cfe5cf;
-
+	width: 100%;
 }
