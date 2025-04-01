@@ -1,0 +1,63 @@
+<html>
+<head>
+    <style>
+        .slide-show {
+            font-family: 'Cormorant Garamond', serif;
+            margin-left: -30px;
+            margin-right: -30px;
+            
+            overflow: hidden;
+            border: 3px solid white;
+            border-radius: 9px;
+            height: 45vh;
+            width: 80vw;
+            display: block;
+            margin:auto;
+            margin-top: 20px;
+            
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .slide-show .image, .slide-show .subimg {
+            background-image: url('hero.jpeg');
+            background-size: 150vh;
+            
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .slide-show .image {
+            filter: brightness(50%)
+        }
+
+        .slide-show .subimg {
+            z-index: 2;
+            overflow: hidden;
+            width: 0%; /* Start with zero width */
+            animation: expandWidth 0.9s ease-in-out forwards;
+        }
+
+        @keyframes expandWidth {
+            0% {
+                width: 0%; /* Start point */
+            }
+            100% {
+                width: 100%; /* End point */
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="slide-show">
+    <div class="subimg">test</div>
+    <div class="image"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,138 @@
+.slide-show {
+    font-family: 'Cormorant Garamond', serif;
+    margin-left: -30px;
+    margin-right: -30px;
+    
+    overflow: hidden;
+    border: 3px solid white;
+    border-radius: 9px;
+    height: 45vh;
+    width: 80vw;
+    display: block;
+    margin:auto;
+    margin-top: 20px;
+    
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    /* ganzes div faden */
+}
+
+.slide-show .image, .slide-show .subimg {
+    background-image: url('');
+    background-size: 150vh;
+    
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slide-show .image {
+    filter: brightness(50%);
+    /* Irgendwie besser faden */
+    transition: 0.8s ease-in-out;
+}
+
+.slide-show .subimg {
+    z-index: 2;
+    overflow: hidden;
+    width: 0%; /* Start with zero width */
+    transition: 0.7s ease-in-out;
+}
+
+.slide-show:hover .subimg {
+    /* animation: expandWidth 0.9s ease-in-out forwards; */
+    width: 100%
+}
+
+
+
+/* Vielleicht mitm opacity hier arbeiten? */
+
+
+@keyframes expandWidth {
+    0% {
+        width: 0%; /* Start point */
+    }
+    100% {
+        width: 100%; /* End point */
+    }
+}
+@keyframes shrinkWidth {
+    0% {
+        width: 100%; /* Start point */
+    }
+    100% {
+        width: 0%; /* End point */
+    }
+}
+
+.slide-show .content {
+    position: absolute;
+    left: 35px;
+    padding-right: 35px;
+    
+    top: 45px;
+    min-width: 700px;
+    /* border: 2px solid green; */
+    height: 85%;
+    color:white;
+    font-weight: bolder;
+    z-index: 2;
+}
+
+.slide-show .content h1 {
+    font-size: 80px;
+    z-index: 1;
+}
+.slide-show .content .description {
+    position: absolute;
+    bottom: 0px;
+    font-size: larger;
+    font-family: "Calibri";
+}
+.slide-show .content button {
+    width: 100px;
+    padding: 2px;
+    height: 30px;
+    background-color: transparent;
+    border: 2.5px solid white;
+    border-radius: 5px;
+    color: white
+}
+
+.slide-show .content button:hover {
+    
+    /* Auch hier clickable aussehen lassen den button wenn gehovert wird */
+}
+
+
+
+
+.circles {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    margin: 2px;
+    top: 10px
+}
+.circle {
+    width: 20px; /* Kleinere Durchmesser des Kreises */
+    height: 20px; /* Kleinere Durchmesser des Kreises */
+    border-radius: 50%; /* Macht die Ecken rund, um einen Kreis zu erzeugen */
+    border: 2px solid white; /* Weiße Border */
+    margin: 0 5px; /* Abstand zwischen den Kreisen */
+    background-color: transparent; /* Hintergrundfarbe transparent */
+    z-index: 2;
+}
+
+.circle.filled {
+    background-color: white; /* Nur dieser Kreis ist weiß ausgefüllt */
+}
+
+.circle:hover {
+    /* "clickable" aussehen lassen */
+}

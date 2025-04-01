@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<meta charset="UTF-8">
+	<!-- <meta name="viewport" content="width=555, initial-scale=1.0"> -->
+	<meta id="viewport" name="viewport" content="width=device-width" />
+    <script>
+        window.onload = function () {
+            if(window.innerWidth <= 555) {
+                var mvp = document.getElementById('viewport');
+                mvp.setAttribute('content','width=555');
+            }
+        }
+     </script>
+
+	<title>Roses in the Garden - Gartenanzucht mit Liebe für Zuhause</title>
+	<link rel="stylesheet" href="../style.css">
+	<link rel="stylesheet" href="template.css">
+	<style>
+        notice {
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+            text-align: center;
+        }
+
+		
+	</style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair Display">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cormorant Garamond">
+</head>
+
+<body>
+	<header>
+		<div style="height: 15vh">
+			<div class="logo-container" style="position: absolute; margin: auto; left: 0; left: 0px; right: 0; top: -4vh">
+				<img alt="Roses in the Garden Logo" src="assets/rosesinthegardentransparent.jpg" style="height: 25vh;" >
+			  </div>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="#">Start</a></li>
+				<li><a href="#">Über mich</a></li>
+				<li><a href="#">DIYs</a></li>
+				<li><a href="#">Anzuchthilfe</a></li>
+				<li><a href="#">Kontakt</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+        <div class="slide-show">
+			<div class="subimg"></div>
+			<div class="image"></div>
+
+			<div class="circles">
+			</div>
+
+			<div class="content">
+				<h1 class="title"></h1>
+				<div class="description">
+					<p class="description-text">Du möchtest wissen wie du im Winter Tomaten anbauen kannst, ohne dir Sorgen um die Blütezeit zu machen? Dafür musst du nur ein paar Schritte beachten, damit alles im Lot ist und alles so verläuft wie du willst, und wie das geht, werde ich dir zeigen</p>
+					<a class="url"><button>Lesen</button></a>
+				</div>
+			</div>
+		</div>
+		
+        
+	</main>
+
+	<footer style="display:none">
+		<p>&copy; 2025 Roses in the Garden</p>
+	</footer>
+</body>
+
+
+<script>
+	const posts = [
+		{title: "Tomaten im Winter", description: "Du möchtest wissen wie du im Winter Tomaten anbauen kannst, ohne dir Sorgen um die Blütezeit zu machen? Dafür musst du nur ein paar Schritte beachten, damit alles im Lot ist und alles so verläuft wie du willst, und wie das geht, werde ich dir zeigen", image: "hero.jpeg", url: "test.html"},
+		{title: "Erbsen im Winter", description: "Du möchtest wissen wie du im Winter Tomaten anbauen kannst, ohne dir Sorgen um die Blütezeit zu machen? Dafür musst du nur ein paar Schritte beachten, damit alles im Lot ist und alles so verläuft wie du willst, und wie das geht, werde ich dir zeigen", image: "36460ed976e25a0d9956aa21e86525c4_sm.png", url: "test.html"}
+	]
+	
+	window.currentPost = -1;
+
+	function setPost(post) {
+		document.querySelector('.slide-show .content .title').innerText = post.title;
+		document.querySelector('.slide-show .content .description-text').innerText = post.description;
+		document.querySelector('.slide-show .image').style.backgroundImage = `url('${post.image}')`;
+		document.querySelector('.slide-show .subimg').style.backgroundImage = `url('${post.image}')`;
+		document.querySelector('.slide-show .url').href = post.url;
+	}
+
+	function nextPost() {
+		setNPost((window.currentPost + 1 == posts.length ? 0 : window.currentPost + 1))
+	}
+
+	function setNPost(number) {
+		// Animation hinzufügen für nach links swipen, etc
+		console.log(window.poster)
+
+		if (window.currentPost != -1)
+			document.querySelector('.circles').children[window.currentPost].classList.remove('filled')
+
+		window.currentPost = number
+		document.querySelector('.circles').children[window.currentPost].classList.add('filled')
+		setPost(posts[window.currentPost])
+	}
+
+	for (let i = 0; i < posts.length; i++) {
+		let circle = document.createElement('div');
+		circle.classList.add('circle')
+		circle.attributes['index'] = i;
+		circle.onclick = (event) => {
+			clearInterval(window.poster)
+			console.log('cleaered interval')
+			setNPost(event.target.attributes['index'])
+			
+			console.log('set new interval')
+			window.poster = setInterval(() => {
+				nextPost();
+			}, 5000)
+		}
+		document.querySelector('.circles').appendChild(circle)
+	}
+
+	nextPost();
+	window.poster = setInterval(() => {
+		nextPost();
+	}, 5000)
+</script>
+</html>
